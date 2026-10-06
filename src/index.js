@@ -1,17 +1,34 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+// Import React.
+import React from "react";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
+// Import ReactDOM to render the application.
+import ReactDOM from "react-dom/client";
+
+// Import App.js from the src folder.
+import App from "./App";
+
+// Import UserProvider from usercontext.js.
+import { UserProvider } from "./context/usercontext";
+
+// Import ThemeProvider from ThemeContext.js.
+import { ThemeProvider } from "./context/ThemeContext";
+
+// Create the React root.
+const root = ReactDOM.createRoot(document.getElementById("root"));
+
+// Render the application.
 root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+
+    <UserProvider>
+
+       
+        <ThemeProvider>
+
+            <App />
+
+        </ThemeProvider>
+
+    </UserProvider>
+
+); 
